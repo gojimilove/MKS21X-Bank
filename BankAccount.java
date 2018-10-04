@@ -1,7 +1,7 @@
 public class BankAccount {
-	public double balance;
-	public int accountID;
-	public String password;
+	private double balance;
+	private int accountID;
+	private String password;
 	public BankAccount(double startBalance, int startID, String startPass) {
 		balance = startBalance;
 		accountID = startID;
@@ -28,5 +28,11 @@ public class BankAccount {
 		if (withdrawal > balance) return false;		
 		balance -= withdrawal;
 		return true;
+	}
+	private boolean authenticate(String password) {
+		return this.password.equals(password);
+	}
+	public boolean transferTo(BankAccount other, double amount, String passsword) {
+		return (authenticate(password));
 	}
 }
