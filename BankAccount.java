@@ -33,6 +33,6 @@ public class BankAccount {
 		return this.password.equals(password);
 	}
 	public boolean transferTo(BankAccount other, double amount, String passsword) {
-		return (authenticate(password));
+		return (this.authenticate(password) && this.withdraw(amount) && other.deposit(amount));
 	}
 }
